@@ -1,0 +1,25 @@
+# CODEOWNERS · abogadaguerra.com
+# Define quién aprueba cambios por área del repo
+# Sintaxis: <path> <usuario1> <usuario2>
+# Más info: https://docs.github.com/en/repositories/managing-your-repositories-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default: gerencia revisa todo
+* @potencia-empresarial/gerencia
+
+# Archivos legales: gerencia + cualquier abogado del equipo
+/aviso-de-privacidad.html @potencia-empresarial/gerencia
+/terminos.html @potencia-empresarial/gerencia
+/cookies.html @potencia-empresarial/gerencia
+
+# Tracking y analítica: gerencia + marketing
+/js/tracking.js @potencia-empresarial/gerencia @potencia-empresarial/marketing
+
+# Configuración Netlify: solo dev senior
+/netlify.toml @potencia-empresarial/dev-senior
+/_redirects @potencia-empresarial/dev-senior
+/_headers @potencia-empresarial/dev-senior
+/.github/ @potencia-empresarial/dev-senior
+
+# Documentación: cualquiera puede revisar
+/README.md @potencia-empresarial/gerencia
+/CHANGELOG.md @potencia-empresarial/gerencia

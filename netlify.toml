@@ -1,0 +1,156 @@
+# ============================================
+# Netlify Configuration · abogadaguerra.com
+# Potencia Empresarial · v1.0.0
+# ============================================
+
+[build]
+  publish = "."
+  # Sin build command — es un sitio estático puro
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# ============================================
+# DEPLOY CONTEXTS
+# ============================================
+
+# Producción: rama main → abogadaguerra.com
+[context.production]
+  command = ""
+
+# Staging: rama staging → staging--abogadaguerra.netlify.app
+[context.staging]
+  command = ""
+
+# Deploy previews (PRs)
+[context.deploy-preview]
+  command = ""
+
+# ============================================
+# HEADERS DE SEGURIDAD Y PERFORMANCE
+# ============================================
+
+# Headers globales para todo el sitio
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+    X-XSS-Protection = "1; mode=block"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+# Cache muy agresivo para CSS (un año, immutable)
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache muy agresivo para JS
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache para fuentes
+[[headers]]
+  for = "/assets/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Access-Control-Allow-Origin = "*"
+
+# Cache moderado para imágenes
+[[headers]]
+  for = "/assets/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+# Cache corto para HTML (queremos que actualizaciones se vean rápido)
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# ============================================
+# REDIRECTS
+# ============================================
+
+# Forzar HTTPS (Netlify lo hace automáticamente cuando Force HTTPS está on, pero explicitar no hace daño)
+
+# Redirigir www a no-www
+[[redirects]]
+  from = "https://www.abogadaguerra.com/*"
+  to = "https://abogadaguerra.com/:splat"
+  status = 301
+  force = true
+
+# Short URLs para tracking y compartir
+[[redirects]]
+  from = "/blog"
+  to = "/blog/"
+  status = 301
+
+[[redirects]]
+  from = "/guia"
+  to = "/guia-emergencia-12-horas.html"
+  status = 301
+
+[[redirects]]
+  from = "/checklist"
+  to = "/checklist-ley-906.html"
+  status = 301
+
+[[redirects]]
+  from = "/whitepaper"
+  to = "/whitepaper-defensa-empresarial.html"
+  status = 301
+
+# WhatsApp shortcut
+[[redirects]]
+  from = "/wa"
+  to = "https://wa.me/573116074995"
+  status = 302
+  force = true
+
+# Old slugs (post-Colombia migration) — preservan SEO si algo ya indexó México
+[[redirects]]
+  from = "/checklist-nsjp.html"
+  to = "/checklist-ley-906.html"
+  status = 301
+
+[[redirects]]
+  from = "/blog/prision-preventiva-oficiosa-mexico.html"
+  to = "/blog/medida-aseguramiento-intramural-colombia.html"
+  status = 301
+
+[[redirects]]
+  from = "/blog/compliance-penal-empresarial-mexico.html"
+  to = "/blog/compliance-penal-empresarial-colombia.html"
+  status = 301
+
+[[redirects]]
+  from = "/blog/cuanto-cobra-abogado-penalista-mexico.html"
+  to = "/blog/cuanto-cobra-abogado-penalista-colombia.html"
+  status = 301
+
+[[redirects]]
+  from = "/blog/que-hacer-si-te-citan-al-ministerio-publico.html"
+  to = "/blog/que-hacer-si-te-cita-la-fiscalia.html"
+  status = 301
+
+[[redirects]]
+  from = "/blog/amparo-penal-cuando-procede.html"
+  to = "/blog/tutela-penal-habeas-corpus-colombia.html"
+  status = 301
+
+[[redirects]]
+  from = "/blog/que-hacer-si-detuvieron-a-un-familiar.html"
+  to = "/blog/que-hacer-si-capturaron-a-un-familiar.html"
+  status = 301
+
+# 404 fallback (catch all)
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404

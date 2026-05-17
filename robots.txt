@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Bloquear archivos de configuración interna
+Disallow: /.claude/
+Disallow: /assets/temp/
+
+# Sitemap
+Sitemap: https://abogadaguerra.com/sitemap.xml

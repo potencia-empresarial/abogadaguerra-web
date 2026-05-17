@@ -1,0 +1,9 @@
+# Redirect www to non-www
+https://www.abogadaguerra.com/* https://abogadaguerra.com/:splat 301!
+
+# Short URLs útiles
+/blog       /blog/                                   301
+/guia       /guia-emergencia-12-horas.html           301
+/checklist  /checklist-ley-906.html                     301
+/whitepaper /whitepaper-defensa-empresarial.html     301
+/wa         https://wa.me/573116074995                301
