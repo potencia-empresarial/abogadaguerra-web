@@ -683,7 +683,7 @@ section {
 /* ---- 10. Cards de situación (Persona) ---- */
 .persona-grid {
   display: grid;
-  gap: var(--s-l);
+  gap: var(--s-m);
 }
 
 @media (min-width: 720px) {
@@ -694,11 +694,11 @@ section {
   background: var(--c-blanco);
   border: 1px solid var(--c-niebla-light);
   border-radius: var(--radius-l);
-  padding: var(--s-xl);
+  padding: var(--s-l);
   transition: all var(--duration) var(--ease);
   display: flex;
   flex-direction: column;
-  gap: var(--s-m);
+  gap: var(--s-s);
   position: relative;
   overflow: hidden;
 }
@@ -735,31 +735,32 @@ section {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  background: var(--c-piedra);
-  color: var(--c-brasa);
-  margin-bottom: var(--s-s);
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: var(--c-brasa);
+  color: var(--c-algodon);
+  margin-bottom: 0;
 }
 
 .persona-card__icon svg {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   stroke: currentColor;
   fill: none;
-  stroke-width: 1.5;
+  stroke-width: 1.9;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
 .persona-card--urgent .persona-card__icon {
-  background: rgba(184, 84, 46, 0.12);
+  background: var(--c-brasa);
+  color: var(--c-algodon);
 }
 
 .persona-card--premium .persona-card__icon {
-  background: rgba(167, 138, 86, 0.15);
-  color: var(--c-laton);
+  background: var(--c-laton);
+  color: var(--c-algodon);
 }
 
 .persona-card__title {
