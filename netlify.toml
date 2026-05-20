@@ -11,6 +11,14 @@
   NODE_VERSION = "20"
 
 # ============================================
+# NETLIFY FUNCTIONS (serverless) — Meta CAPI
+# Requiere env vars: META_PIXEL_ID, META_CAPI_TOKEN
+# ============================================
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# ============================================
 # DEPLOY CONTEXTS
 # ============================================
 
@@ -109,7 +117,7 @@
 # WhatsApp shortcut
 [[redirects]]
   from = "/wa"
-  to = "https://wa.me/573116074995"
+  to = "https://wa.me/573212467679"
   status = 302
   force = true
 

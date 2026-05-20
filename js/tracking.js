@@ -69,14 +69,36 @@
     })(window, document, "clarity", "script", CONFIG.CLARITY_ID);
   }
 
-  // ---- 5. UNIFIED EVENT TRACKING ----
+  // ---- 5. META CAPI (server-side, deduplicado con el Pixel) ----
+  function sendToCAPI(metaEventName, eventId, params) {
+    try {
+      fetch('/.netlify/functions/capi', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        keepalive: true,
+        body: JSON.stringify({
+          event_name: metaEventName,
+          event_id: eventId,
+          event_source_url: window.location.href,
+          user_data: {
+            email: params.email || params.correo || '',
+            phone: params.whatsapp || params.telefono || ''
+          },
+          custom_data: {}
+        })
+      }).catch(function () { /* CAPI nunca debe romper el frontend */ });
+    } catch (e) { /* noop */ }
+  }
+
+  // ---- 6. UNIFIED EVENT TRACKING ----
   function trackEvent(eventName, params) {
     params = params || {};
     // Console (dev)
     console.log('[Track]', eventName, params);
     // GA4
     if (window.gtag) window.gtag('event', eventName, params);
-    // Meta
+    // Meta — Pixel (navegador) + CAPI (servidor) con event_id compartido.
+    // Meta deduplica por event_id: el evento cuenta UNA vez aunque llegue por ambas vías.
     if (window.fbq) {
       const fbEvents = {
         click_whatsapp: 'Contact',
@@ -84,7 +106,11 @@
         submit_contact_form: 'Lead',
         submit_lm_form: 'CompleteRegistration'
       };
-      if (fbEvents[eventName]) window.fbq('track', fbEvents[eventName], params);
+      if (fbEvents[eventName]) {
+        const eventId = 'ag-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
+        window.fbq('track', fbEvents[eventName], params, { eventID: eventId });
+        sendToCAPI(fbEvents[eventName], eventId, params);
+      }
     }
     // TikTok
     if (window.ttq) {
