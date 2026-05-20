@@ -63,7 +63,10 @@
   });
 
   // ---- 4. Lead Magnet form handler ----
-  const lmForm = document.querySelector('#lm-form');
+  // NOTA: el formulario con [data-multistep] lo gestiona components.js (motor
+  // multi-paso + WhatsApp con número oficial). Este handler legacy queda inerte
+  // para evitar doble apertura de WhatsApp / número placeholder.
+  const lmForm = document.querySelector('#lm-form:not([data-multistep])');
   if (lmForm) {
     lmForm.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -94,7 +97,7 @@
         const waText = encodeURIComponent(
           `Hola, soy ${data.nombre}. Acabo de descargar la Guía de Emergencia 12 horas en abogadaguerra.com y me gustaría recibirla.`
         );
-        const waPhone = '521000000000'; // PLACEHOLDER - cambiar por WhatsApp Business real
+        const waPhone = '573212467679'; // WhatsApp oficial Abogada Guerra
         window.open(`https://wa.me/${waPhone}?text=${waText}`, '_blank');
       }, 1500);
     });
