@@ -132,20 +132,12 @@
   function buildWhatsAppURL(opts) {
     opts = opts || {};
     const phone = CONFIG.WHATSAPP_PHONE;
-    const page = getCurrentPage();
-    const location = opts.location || 'unknown';
     const message = opts.message || 'Hola Stephanie, llegué a tu sitio y me gustaría orientación.';
 
-    // UTM params
-    const utm = new URLSearchParams({
-      utm_source: 'web',
-      utm_medium: location,
-      utm_campaign: page
-    }).toString();
-
-    // wa.me URL con texto que incluye UTM al final como tracking interno
-    const fullText = message + '\n\n[' + utm + ']';
-    return 'https://wa.me/' + phone + '?text=' + encodeURIComponent(fullText);
+    // wa.me URL con SOLO el mensaje limpio. Antes se anexaba un bloque
+    // [utm_source=...] al texto — eso llegaba al chat del cliente y se veía
+    // mal. El origen del clic ya se rastrea con el Pixel/GA vía data-location.
+    return 'https://wa.me/' + phone + '?text=' + encodeURIComponent(message);
   }
 
   // ---- 7. ENRICH WhatsApp LINKS ----
