@@ -161,10 +161,10 @@
                'Me estoy informando, gracias por la guía.');
       } else if (formId === 'contact-form') {
         msg = 'Hola, soy ' + name + ' y quiero agendar una consulta.' +
-              '\n\n📧 Correo: ' + (data.email || 'N/D') +
-              '\n📍 Ciudad: ' + (data.ciudad || 'N/D') +
-              '\n⚖️ Tipo de caso: ' + (data.tipo || 'consulta general') +
-              '\n📝 Descripción: ' + (data.mensaje || 'N/D');
+              '\n\nCorreo: ' + (data.email || 'N/D') +
+              '\nCiudad: ' + (data.ciudad || 'N/D') +
+              '\nTipo de caso: ' + (data.tipo || 'consulta general') +
+              '\nDescripcion: ' + (data.mensaje || 'N/D');
       }
       const url = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(msg);
       window.open(url, '_blank', 'noopener');
