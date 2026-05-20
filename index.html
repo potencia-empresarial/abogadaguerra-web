@@ -31,8 +31,8 @@
   <!-- Tracking centralizado (GA4 + Meta Pixel + TikTok + Clarity) -->
   <script src="js/tracking.js" defer></script>
 
-  <!-- Favicon (placeholder) -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231A1F2E'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' dominant-baseline='middle' fill='%23B8542E' font-family='serif' font-size='18' font-weight='bold'%3ESG%3C/text%3E%3C/svg%3E">
+  <!-- Favicon (isotipo oficial) -->
+  <link rel="icon" type="image/png" href="assets/img/isotipo.png">
 
   <!-- Schema markup -->
   <script type="application/ld+json">
@@ -65,9 +65,12 @@
   <!-- ============ HEADER ============ -->
   <header class="site-header">
     <div class="container site-header__inner">
-      <a href="index.html" class="logo">
-        <strong>ABOGADA GUERRA</strong>
-        <small>Defensa Penal</small>
+      <a href="index.html" class="logo" style="display:flex; align-items:center; gap:10px;">
+        <img src="assets/img/isotipo.png" alt="" width="44" height="44" style="border-radius:8px; flex-shrink:0;">
+        <span style="display:flex; flex-direction:column; line-height:1.15;">
+          <strong>ABOGADA GUERRA</strong>
+          <small>Defensa Penal</small>
+        </span>
       </a>
 
       <nav class="nav" aria-label="Navegación principal">
@@ -132,11 +135,11 @@
       </div>
 
       <div class="hero__visual">
-        <img src="assets/img/stephanie-guerra.jpg"
+        <img src="assets/img/hero-stephanie.png"
              alt="Stephanie Guerra — Abogada penalista en Bucaramanga"
              class="hero__photo"
              loading="eager"
-             width="435" height="500">
+             width="450" height="600">
       </div>
     </div>
   </section>
@@ -209,11 +212,13 @@
   <section class="bg-piedra">
     <div class="container">
       <div class="split">
-        <div class="pillars__visual reveal" aria-hidden="true"></div>
+        <div class="pillars__visual reveal">
+          <img src="assets/img/pilares-stephanie.png" alt="Stephanie Guerra en su despacho" style="width:100%; height:100%; object-fit:cover; display:block; border-radius:inherit;">
+        </div>
 
         <div class="pillars__text reveal">
           <p class="eyebrow">Mi compromiso contigo</p>
-          <h2>Peleo contigo. <em class="text-brasa">No solo por ti.</em></h2>
+          <h2>Peleo a tu lado. <em class="text-brasa">No solo por ti.</em></h2>
           <p class="lead">
             Llevo 7 años defendiendo a familias y profesionales en el momento más oscuro de su vida. He aprendido que la defensa técnica es la mitad. La otra mitad es <em>estar</em>.
           </p>
@@ -321,37 +326,13 @@
     </div>
   </section>
 
-  <!-- ============ VIDEO HERO ============ -->
-  <section>
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="eyebrow">Conóceme en 60 segundos</p>
-        <h2 class="section-header__title">Si nunca habías necesitado un abogado penal, <em class="text-brasa">empecemos por aquí</em>.</h2>
-      </div>
-
-      <div class="video-hero" data-video-embed="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0" data-location="hero-video" role="button" tabindex="0" aria-label="Reproducir video de presentación de Stephanie Guerra">
-        <div class="video-hero__poster" style="background-image: linear-gradient(135deg, rgba(26,31,46,0.85), rgba(42,47,62,0.95));">
-        </div>
-        <div class="video-hero__play" aria-hidden="true"></div>
-        <p class="video-hero__caption">
-          Soy Stephanie Guerra. Te explico cómo trabajo.
-          <span class="video-hero__duration">0:60</span>
-        </p>
-      </div>
-
-      <p class="text-center mt-l text-soft" style="font-size: var(--t-small);">
-        El video reemplaza placeholders cuando llegue la producción. <a href="sobre-mi.html" class="text-brasa"><strong>Mientras tanto, lee mi historia →</strong></a>
-      </p>
-    </div>
-  </section>
-
   <!-- ============ TESTIMONIOS ============ -->
   <section class="testimonios">
     <div class="container">
       <div class="section-header reveal">
         <p class="eyebrow">Lo que dicen quienes me eligieron</p>
-        <h2 class="section-header__title">Testimonios anonimizados</h2>
-        <p class="lead">Por respeto al secreto profesional, no comparto nombres ni detalles identificables. Estos son testimonios reales con datos generalizados.</p>
+        <h2 class="section-header__title">Testimonios reales</h2>
+        <p class="lead">Casos reales de personas que confiaron su defensa. Por ética profesional protejo su identidad, pero sus palabras son textuales.</p>
       </div>
 
       <div class="grid grid-3">
@@ -393,7 +374,7 @@
       </div>
 
       <div class="testimonios__cta-row">
-        <a href="#" class="google-reviews-badge" target="_blank" rel="noopener" aria-label="Ver reseñas en Google Business Profile">
+        <a href="https://www.google.com/search?q=Abogada+Guerra&stick=H4sIAAAAAAAA_-NgU1IxqEhMMzMyNk8ztDA2SjZMsUiyAgpZWCQmGhknGpmbmJinJi9i5XNMyk9PTElUcC9NLSpKBADzVkIIOQAAAA&hl=es-419&authuser=0" class="google-reviews-badge" target="_blank" rel="noopener" aria-label="Ver reseñas en Google Business Profile">
           <span class="google-reviews-badge__stars" aria-hidden="true">★★★★★</span>
           <span><strong>4.9/5</strong> en Google · Ver todas las reseñas →</span>
         </a>
@@ -449,11 +430,16 @@
       <p class="eyebrow text-brasa">No estás solo en esto</p>
       <h2 class="cta-final__title">Te explico ahora.<br>Sin compromiso.</h2>
       <p class="cta-final__lead">
-        Escribe por WhatsApp. Respondo personalmente en horario hábil o mi equipo en madrugada. Sin presión de venta, sin guion frío. Solo conversación.
+        Escribe por WhatsApp para una respuesta inmediata, o agenda una consulta diagnóstica si prefieres una cita formal. Sin presión de venta, sin guion frío.
       </p>
-      <a href="#" class="btn btn--primary btn--large" data-track="whatsapp" data-location="cta-final">
-        Hablar por WhatsApp ahora →
-      </a>
+      <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+        <a href="#" class="btn btn--primary btn--large" data-track="whatsapp" data-location="cta-final">
+          Hablar por WhatsApp ahora →
+        </a>
+        <a href="contacto.html#agenda" class="btn btn--large" data-track="agendar" data-location="cta-final" style="color:#fff; border:2px solid rgba(255,255,255,0.55); background:transparent;">
+          Agendar consulta diagnóstica →
+        </a>
+      </div>
     </div>
   </section>
 
@@ -489,9 +475,9 @@
       <div class="site-footer__grid">
         <div class="site-footer__col">
           <div class="site-footer__brand">ABOGADA GUERRA</div>
-          <p class="site-footer__brand-sub">Stephanie Guerra · Defensa Penal</p>
-          <p class="site-footer__brand-sub mt-s"></p>
-          <p class="site-footer__brand-sub">Miembro de [Barra/Colegio]</p>
+          <p class="site-footer__brand-sub">Stephanie Guerra Mendoza</p>
+          <p class="site-footer__brand-sub mt-s">Abogada especializada en Derecho Penal</p>
+          <p class="site-footer__brand-sub">Universidad Autónoma de Bucaramanga</p>
         </div>
 
         <div class="site-footer__col">
@@ -517,10 +503,21 @@
         <div class="site-footer__col">
           <h4>Redes</h4>
           <ul class="social-list">
-            <li><a href="#" aria-label="Instagram">IG</a></li>
-            <li><a href="#" aria-label="Facebook">FB</a></li>
-            <li><a href="#" aria-label="TikTok">TT</a></li>
-            <li><a href="#" aria-label="LinkedIn">LI</a></li>
+            <li>
+              <a href="https://www.facebook.com/profile.php?id=61589593124945" target="_blank" rel="noopener" aria-label="Facebook de Abogada Guerra">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/sanchezguerraasociados/" target="_blank" rel="noopener" aria-label="Instagram de Abogada Guerra">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/573212467679" target="_blank" rel="noopener" aria-label="WhatsApp de Abogada Guerra">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
