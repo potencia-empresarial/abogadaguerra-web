@@ -160,7 +160,11 @@
                urgencia === 'prevencion' ? 'Es una situación preventiva, quiero estar preparado/a.' :
                'Me estoy informando, gracias por la guía.');
       } else if (formId === 'contact-form') {
-        msg = name + ' — ' + (data.tipo || 'consulta general') + '. ' + (data.mensaje || '');
+        msg = 'Hola, soy ' + name + ' y quiero agendar una consulta.' +
+              '\n\n📧 Correo: ' + (data.email || 'N/D') +
+              '\n📍 Ciudad: ' + (data.ciudad || 'N/D') +
+              '\n⚖️ Tipo de caso: ' + (data.tipo || 'consulta general') +
+              '\n📝 Descripción: ' + (data.mensaje || 'N/D');
       }
       const url = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(msg);
       window.open(url, '_blank', 'noopener');

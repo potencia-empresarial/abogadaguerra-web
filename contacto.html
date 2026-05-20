@@ -175,15 +175,20 @@
               </button>
             </div>
 
-            <!-- PASO 2: WhatsApp -->
+            <!-- PASO 2: WhatsApp + Ciudad -->
             <div class="ms-form__step">
               <h3 class="ms-form__step-question">¿Dónde te escribo?</h3>
               <p class="ms-form__step-hint">Respondo personalmente. Si es urgencia activa, en menos de 30 minutos.</p>
 
               <div class="form-group">
                 <label for="c-whatsapp">WhatsApp</label>
-                <input type="tel" id="c-whatsapp" name="whatsapp" placeholder="+57 321 246 7670" required autocomplete="tel" inputmode="tel">
+                <input type="tel" id="c-whatsapp" name="whatsapp" placeholder="+57 321 246 7679" required autocomplete="tel" inputmode="tel">
                 <p class="form-group__hint">Incluye lada con código de país</p>
+              </div>
+
+              <div class="form-group">
+                <label for="c-ciudad">Ciudad</label>
+                <input type="text" id="c-ciudad" name="ciudad" placeholder="Ej. Bucaramanga" required autocomplete="address-level2">
               </div>
 
               <div class="ms-form__nav">
@@ -203,8 +208,8 @@
               </div>
 
               <div class="form-group">
-                <label for="c-email">Email (opcional)</label>
-                <input type="email" id="c-email" name="email" autocomplete="email">
+                <label for="c-email">Correo electrónico</label>
+                <input type="email" id="c-email" name="email" required autocomplete="email">
               </div>
 
               <div class="ms-form__nav">
@@ -213,14 +218,14 @@
               </div>
             </div>
 
-            <!-- PASO 4: Mensaje + Enviar -->
+            <!-- PASO 4: Descripción del caso + Enviar -->
             <div class="ms-form__step">
-              <h3 class="ms-form__step-question">¿Algo más que deba saber?</h3>
-              <p class="ms-form__step-hint">Sin entrar en detalles del caso. Solo el contexto general. Esto lo veremos a fondo en consulta.</p>
+              <h3 class="ms-form__step-question">Cuéntame brevemente tu caso</h3>
+              <p class="ms-form__step-hint">El contexto general de tu situación. Lo veremos a fondo en la consulta.</p>
 
               <div class="form-group">
-                <label for="c-mensaje">Contexto breve (opcional)</label>
-                <textarea id="c-mensaje" name="mensaje" placeholder="Ej. 'Mi hermano fue detenido ayer en Bucaramanga, audiencia preliminar (legalización de captura) es mañana'"></textarea>
+                <label for="c-mensaje">Breve descripción del caso</label>
+                <textarea id="c-mensaje" name="mensaje" required placeholder="Ej. 'Mi hermano fue detenido ayer en Bucaramanga, audiencia preliminar (legalización de captura) es mañana'"></textarea>
               </div>
 
               <div class="ms-form__nav">
