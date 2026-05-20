@@ -11,7 +11,7 @@
   // ---- CONFIG: reemplazar con IDs reales en producción ----
   const CONFIG = {
     GA4_ID: 'G-XXXXXXXXXX',                  // Google Analytics 4
-    META_PIXEL_ID: '000000000000000',        // Meta Pixel
+    META_PIXEL_ID: '1637086874251811',       // Meta Pixel — Abogada Guerra
     TIKTOK_PIXEL_ID: 'XXXXXXXXXXXXXXXXX',    // TikTok Pixel
     CLARITY_ID: 'XXXXXXXXXX',                // Microsoft Clarity
     BOTCAKE_ID: 'XXXXXXXXXX',                // Pancake / Botcake widget
