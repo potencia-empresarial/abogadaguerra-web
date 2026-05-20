@@ -97,7 +97,7 @@
         const waText = encodeURIComponent(
           `Hola, soy ${data.nombre}. Acabo de descargar la Guía de Emergencia 12 horas en abogadaguerra.com y me gustaría recibirla.`
         );
-        const waPhone = '573212467679'; // WhatsApp oficial Abogada Guerra
+        const waPhone = '573212467670'; // WhatsApp oficial Abogada Guerra
         window.open(`https://wa.me/${waPhone}?text=${waText}`, '_blank');
       }, 1500);
     });

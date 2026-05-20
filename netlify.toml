@@ -117,7 +117,7 @@
 # WhatsApp shortcut
 [[redirects]]
   from = "/wa"
-  to = "https://wa.me/573212467679"
+  to = "https://wa.me/573212467670"
   status = 302
   force = true
 

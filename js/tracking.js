@@ -15,7 +15,7 @@
     TIKTOK_PIXEL_ID: 'XXXXXXXXXXXXXXXXX',    // TikTok Pixel
     CLARITY_ID: 'XXXXXXXXXX',                // Microsoft Clarity
     BOTCAKE_ID: 'XXXXXXXXXX',                // Pancake / Botcake widget
-    WHATSAPP_PHONE: '573212467679',          // WhatsApp Business Stephanie (Colombia, E.164 sin +)
+    WHATSAPP_PHONE: '573212467670',          // WhatsApp Business Stephanie (Colombia, E.164 sin +)
     BUSINESS_HOURS: { start: 9, end: 19 }    // Horario humano (Bucaramanga · UTC-5)
   };
 

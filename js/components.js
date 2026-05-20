@@ -149,7 +149,7 @@
 
     // Open WhatsApp with context
     setTimeout(function() {
-      const phone = (window.AbogadaGuerra && window.AbogadaGuerra.config.WHATSAPP_PHONE) || '573212467679';
+      const phone = (window.AbogadaGuerra && window.AbogadaGuerra.config.WHATSAPP_PHONE) || '573212467670';
       const name = data.nombre || 'Hola';
       let msg = '';
       if (formId === 'lm-form') {
